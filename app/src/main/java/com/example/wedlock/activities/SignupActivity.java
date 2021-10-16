@@ -5,11 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.wedlock.R;
 import com.example.wedlock.activities.SigninActivity;
 
 public class SignupActivity extends AppCompatActivity {
+
+    Button signUpText;
+    EditText inputEmail, inputUsername, inputPassword, reenterPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,5 +27,11 @@ public class SignupActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), SigninActivity.class));
             }
         });
+
+        signUpText = findViewById(R.id.signUpText);
+        inputEmail = findViewById(R.id.inputEmail);
+        inputUsername = findViewById(R.id.inputUsername);
+        inputPassword = findViewById(R.id.inputPassword);
+        reenterPassword = findViewById(R.id.reenterPassword);
     }
 }

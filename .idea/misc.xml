@@ -3,9 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/android/wedlock/app/src/main/res/drawable/edittext_background.xml" value="0.2203125" />
         <entry key="..\:/android/wedlock/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/android/wedlock/app/src/main/res/layout/activity_signin.xml" value="0.18" />
         <entry key="..\:/android/wedlock/app/src/main/res/layout/activity_signup.xml" value="0.18" />
+        <entry key="..\:/android/wedlock/app/src/main/res/layout/app_bar_layout.xml" value="0.1" />
       </map>
     </option>
   </component>

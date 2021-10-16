@@ -45,6 +45,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/LayoutHeader"
             android:layout_marginStart="20dp"
+            android:padding="40dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             app:layout_constraintCircleRadius="5sp"
@@ -58,99 +59,85 @@
                 android:orientation="vertical"
                 android:padding="5dp">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:includeFontPadding="false"
-                    android:textSize="24dp"
-                    android:text="EMAIL"
-                    android:textColor="@color/white"/>
 
                 <EditText
                     android:id="@+id/inputEmail"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@null"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edittext_background"
+                    android:elevation="3dp"
                     android:layout_marginStart="8dp"
                     android:imeOptions="actionNext"
                     android:inputType="textEmailAddress"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:hint="sample@email.com"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:hint="Email"
+                    android:drawableLeft="@drawable/ic_email"
+                    android:drawableTint="@color/black"
+                    android:drawablePadding="10dp"
+                    android:padding="13dp"
                     android:textSize="16dp"
                     />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:includeFontPadding="false"
-                    android:textSize="24dp"
-                    android:text="FULL NAME"
-                    android:textColor="@color/white"/>
-
                 <EditText
+                    android:layout_marginTop="10dp"
                     android:id="@+id/inputUsername"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@null"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edittext_background"
+                    android:elevation="3dp"
                     android:layout_marginStart="8dp"
                     android:imeOptions="actionNext"
                     android:inputType="text"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:hint="Ishara Kandakkulama"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:hint="Full Name"
+                    android:drawableLeft="@drawable/ic_name"
+                    android:drawableTint="@color/black"
+                    android:drawablePadding="10dp"
+                    android:padding="13dp"
                     android:textSize="16dp"
                     />
 
-
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:includeFontPadding="false"
-                    android:textSize="24dp"
-                    android:text="PASSWORD"
-                    android:textColor="@color/white"/>
-
                 <EditText
+                    android:layout_marginTop="10dp"
                     android:id="@+id/inputPassword"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@null"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edittext_background"
+                    android:elevation="3dp"
                     android:layout_marginStart="8dp"
                     android:imeOptions="actionNext"
                     android:inputType="textPassword"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:hint="Enter new password"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:hint="Password"
+                    android:drawableLeft="@drawable/ic_password"
+                    android:drawableTint="@color/black"
+                    android:drawablePadding="10dp"
+                    android:padding="13dp"
                     android:textSize="16dp"
                     />
-
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:includeFontPadding="false"
-                    android:textSize="24dp"
-                    android:text="CONFIRM PASSWORD"
-                    android:textColor="@color/white"/>
 
                 <EditText
+                    android:layout_marginTop="10dp"
                     android:id="@+id/reenterPassword"
                     android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:background="@null"
+                    android:layout_height="50dp"
+                    android:background="@drawable/edittext_background"
+                    android:elevation="3dp"
                     android:layout_marginStart="8dp"
                     android:imeOptions="actionNext"
                     android:inputType="textPassword"
-                    android:textColor="@color/white"
-                    android:textColorHint="@color/white"
-                    android:hint="Confirm password"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:hint="Confirm Password"
+                    android:drawableLeft="@drawable/ic_password"
+                    android:drawableTint="@color/black"
+                    android:drawablePadding="10dp"
+                    android:padding="13dp"
                     android:textSize="16dp"
                     />
-
-
-
 
             </LinearLayout>
 
