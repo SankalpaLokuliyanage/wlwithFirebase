@@ -1,5 +1,6 @@
 package com.example.wedlock.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,7 +13,12 @@ import android.widget.Toast;
 
 import com.example.wedlock.R;
 import com.example.wedlock.activities.SigninActivity;
+import com.example.wedlock.models.UserModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignupActivity extends AppCompatActivity {
 
@@ -21,6 +27,8 @@ public class SignupActivity extends AppCompatActivity {
 
     //authentication
     FirebaseAuth auth;
+
+    FirebaseDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +43,7 @@ public class SignupActivity extends AppCompatActivity {
         });
 
         auth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
 
         signUpText = findViewById(R.id.signUpText);
         inputEmail = findViewById(R.id.inputEmail);
@@ -76,6 +85,26 @@ public class SignupActivity extends AppCompatActivity {
         if (!userPass.equals(userCPass)) {
             Toast.makeText(this, "Password not matched!", Toast.LENGTH_SHORT).show();
             return;
+        }
+
+        else {
+            auth.createUserWithEmailAndPassword(userEmail, userPass)
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+
+                                UserModel userModel = new UserModel(userName, userEmail, userPass);
+                                String id = task.getResult().getUser().getUid();
+                                database.getReference().child("Users").child(id).setValue(userModel);
+
+                                Toast.makeText(SignupActivity.this, "Registration Success", Toast.LENGTH_SHORT).show();
+                            }
+                            else {
+                                Toast.makeText(SignupActivity.this, "Error " + task.getException(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
         }
     }
 }
