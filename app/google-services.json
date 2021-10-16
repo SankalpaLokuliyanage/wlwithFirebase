@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "691013885151",
+    "project_id": "wedlock-37dad",
+    "storage_bucket": "wedlock-37dad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691013885151:android:db84c75085e9db5b50dd6a",
+        "android_client_info": {
+          "package_name": "com.example.wedlock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "691013885151-ckfpm16sjhg8a6hoe12qshbhirfk9uf8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7nCLQltDON2YohXF8Qj4E08WlJuvLG80"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691013885151-ckfpm16sjhg8a6hoe12qshbhirfk9uf8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
