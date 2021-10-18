@@ -57,7 +57,7 @@
                 />
 
             <TextView
-                android:id="@+id/nav_cat_number"
+                android:id="@+id/nav_cat_discount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="30% OFF"
