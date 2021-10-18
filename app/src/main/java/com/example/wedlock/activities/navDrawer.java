@@ -19,6 +19,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class navDrawer extends AppCompatActivity {
 
+
+
     private AppBarConfiguration mAppBarConfiguration;
     private com.example.wedlock.databinding.ActivityNavDrawerBinding binding;
 
