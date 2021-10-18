@@ -18,8 +18,8 @@ import java.util.List;
 
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
 
-    Context context;
-    List<HomeCategory> categoryList;
+    private Context context;
+    private List<HomeCategory> categoryList;
 
     public HomeAdapter(Context context, List<HomeCategory> categoryList) {
         this.context = context;

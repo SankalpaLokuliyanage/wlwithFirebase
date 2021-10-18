@@ -1,6 +1,7 @@
 package com.example.wedlock.ui.home;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,9 +19,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.wedlock.R;
 import com.example.wedlock.adapters.HomeAdapter;
 import com.example.wedlock.adapters.PopularAdapters;
+import com.example.wedlock.adapters.RecommendedAdapter;
 import com.example.wedlock.databinding.FragmentHomeBinding;
 import com.example.wedlock.models.HomeCategory;
 import com.example.wedlock.models.PopularModel;
+import com.example.wedlock.models.RecommendedModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
@@ -34,7 +37,7 @@ import java.util.List;
 
 public class HomeFragment extends Fragment {
 
-    RecyclerView popularRec, homeCatRec;
+    RecyclerView popularRec, homeCatRec, recommendedRec;
     FirebaseFirestore db;
 
     //popular items
@@ -44,6 +47,11 @@ public class HomeFragment extends Fragment {
     //home category
     List<HomeCategory> categoryList;
     HomeAdapter homeAdapter;
+
+    //Recommended
+    List<RecommendedModel> recommendedModelList;
+    RecommendedAdapter recommendedAdapter;
+
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -55,7 +63,7 @@ public class HomeFragment extends Fragment {
 
         popularRec = root.findViewById(R.id.pop_rec);
         homeCatRec = root.findViewById(R.id.explore_rec);
-
+        recommendedRec = root.findViewById(R.id.recommended_rec);
 
         // Popular items
         popularRec.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
@@ -100,6 +108,29 @@ public class HomeFragment extends Fragment {
                             }
                         } else {
                             Toast.makeText(getActivity(), "Error: " + task.getException(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+        recommendedRec.setLayoutManager(new LinearLayoutManager(getActivity(), RecyclerView.HORIZONTAL, false));
+        recommendedModelList = new ArrayList<>();
+        recommendedAdapter = new RecommendedAdapter(getActivity(), recommendedModelList);
+        recommendedRec.setAdapter(recommendedAdapter);
+
+        db.collection("recommended")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                RecommendedModel popularModel = document.toObject(RecommendedModel.class);
+                                recommendedModelList.add(popularModel);
+                                recommendedAdapter.notifyDataSetChanged();
+                            }
+                        } else {
+                            Toast.makeText(getActivity(), "Error: " + task.getException(), Toast.LENGTH_SHORT).show();
+
                         }
                     }
                 });
