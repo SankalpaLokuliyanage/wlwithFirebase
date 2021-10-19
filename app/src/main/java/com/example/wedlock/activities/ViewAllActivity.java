@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
 
 import com.example.wedlock.R;
 import com.example.wedlock.adapters.viewAllAdapter;
@@ -26,6 +28,8 @@ public class ViewAllActivity extends AppCompatActivity {
     viewAllAdapter viewAllAdapter;
     List<viewAllModel> viewAllModelList;
 
+    ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +39,12 @@ public class ViewAllActivity extends AppCompatActivity {
         String type = getIntent().getStringExtra("type");
         recyclerView = findViewById(R.id.view_all_rec);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        progressBar = findViewById(R.id.progressbar);
+
+        progressBar.setVisibility(View.VISIBLE);
+        recyclerView.setVisibility(View.GONE);
+
 
         viewAllModelList = new ArrayList<>();
         viewAllAdapter = new viewAllAdapter(this, viewAllModelList);
@@ -52,6 +62,8 @@ public class ViewAllActivity extends AppCompatActivity {
                         viewAllModel viewAllModel = documentSnapshot.toObject(viewAllModel.class);
                         viewAllModelList.add(viewAllModel);
                         viewAllAdapter.notifyDataSetChanged();
+                        progressBar.setVisibility(View.GONE);
+                        recyclerView.setVisibility(View.VISIBLE);
                     }
 
                 }
@@ -68,6 +80,8 @@ public class ViewAllActivity extends AppCompatActivity {
                         viewAllModel viewAllModel = documentSnapshot.toObject(viewAllModel.class);
                         viewAllModelList.add(viewAllModel);
                         viewAllAdapter.notifyDataSetChanged();
+                        progressBar.setVisibility(View.GONE);
+                        recyclerView.setVisibility(View.VISIBLE);
                     }
 
                 }
@@ -84,6 +98,8 @@ public class ViewAllActivity extends AppCompatActivity {
                         viewAllModel viewAllModel = documentSnapshot.toObject(viewAllModel.class);
                         viewAllModelList.add(viewAllModel);
                         viewAllAdapter.notifyDataSetChanged();
+                        progressBar.setVisibility(View.GONE);
+                        recyclerView.setVisibility(View.VISIBLE);
                     }
 
                 }
@@ -100,6 +116,8 @@ public class ViewAllActivity extends AppCompatActivity {
                         viewAllModel viewAllModel = documentSnapshot.toObject(viewAllModel.class);
                         viewAllModelList.add(viewAllModel);
                         viewAllAdapter.notifyDataSetChanged();
+                        progressBar.setVisibility(View.GONE);
+                        recyclerView.setVisibility(View.VISIBLE);
                     }
 
                 }
@@ -116,6 +134,8 @@ public class ViewAllActivity extends AppCompatActivity {
                         viewAllModel viewAllModel = documentSnapshot.toObject(viewAllModel.class);
                         viewAllModelList.add(viewAllModel);
                         viewAllAdapter.notifyDataSetChanged();
+                        progressBar.setVisibility(View.GONE);
+                        recyclerView.setVisibility(View.VISIBLE);
                     }
 
                 }
@@ -132,6 +152,8 @@ public class ViewAllActivity extends AppCompatActivity {
                         viewAllModel viewAllModel = documentSnapshot.toObject(viewAllModel.class);
                         viewAllModelList.add(viewAllModel);
                         viewAllAdapter.notifyDataSetChanged();
+                        progressBar.setVisibility(View.GONE);
+                        recyclerView.setVisibility(View.VISIBLE);
                     }
 
                 }
