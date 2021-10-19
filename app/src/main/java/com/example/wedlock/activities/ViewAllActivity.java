@@ -73,5 +73,69 @@ public class ViewAllActivity extends AppCompatActivity {
                 }
             });
         }
+
+        //getting makeup_artists
+        if (type != null && type.equalsIgnoreCase("makeup_artists")) {
+            firestore.collection("All_Items").whereEqualTo("type", "makeup_artists").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                    for (DocumentSnapshot documentSnapshot:task.getResult().getDocuments()){
+                        viewAllModel viewAllModel = documentSnapshot.toObject(viewAllModel.class);
+                        viewAllModelList.add(viewAllModel);
+                        viewAllAdapter.notifyDataSetChanged();
+                    }
+
+                }
+            });
+        }
+
+        //getting wedding_cars
+        if (type != null && type.equalsIgnoreCase("wedding_cars")) {
+            firestore.collection("All_Items").whereEqualTo("type", "wedding_cars").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                    for (DocumentSnapshot documentSnapshot:task.getResult().getDocuments()){
+                        viewAllModel viewAllModel = documentSnapshot.toObject(viewAllModel.class);
+                        viewAllModelList.add(viewAllModel);
+                        viewAllAdapter.notifyDataSetChanged();
+                    }
+
+                }
+            });
+        }
+
+        //getting decors
+        if (type != null && type.equalsIgnoreCase("decors")) {
+            firestore.collection("All_Items").whereEqualTo("type", "decors").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                    for (DocumentSnapshot documentSnapshot:task.getResult().getDocuments()){
+                        viewAllModel viewAllModel = documentSnapshot.toObject(viewAllModel.class);
+                        viewAllModelList.add(viewAllModel);
+                        viewAllAdapter.notifyDataSetChanged();
+                    }
+
+                }
+            }); 
+        }
+
+        //getting wedding_cakes
+        if (type != null && type.equalsIgnoreCase("wedding_cakes")) {
+            firestore.collection("All_Items").whereEqualTo("type", "wedding_cakes").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                @Override
+                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                    for (DocumentSnapshot documentSnapshot:task.getResult().getDocuments()){
+                        viewAllModel viewAllModel = documentSnapshot.toObject(viewAllModel.class);
+                        viewAllModelList.add(viewAllModel);
+                        viewAllAdapter.notifyDataSetChanged();
+                    }
+
+                }
+            });
+        }
     }
 }
