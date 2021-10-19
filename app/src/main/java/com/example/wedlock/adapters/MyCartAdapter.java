@@ -1,12 +1,14 @@
 package com.example.wedlock.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.wedlock.R;
@@ -18,6 +20,8 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
 
     Context context;
     List<MyCartModel> cartModelList;
+
+    int totalPrice = 0;
 
     public MyCartAdapter(Context context, List<MyCartModel> cartModelList) {
         this.context = context;
@@ -39,6 +43,12 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
         holder.time.setText(cartModelList.get(position).getCurrentTime());
         holder.quantity.setText(cartModelList.get(position).getTotalQuantity());
         holder.totalPrice.setText(String.valueOf(cartModelList.get(position).getTotalPrice()));
+
+        totalPrice = totalPrice + cartModelList.get(position).getTotalPrice();
+        Intent intent = new Intent("MyTotalAmount");
+        intent.putExtra("totalAmount", totalPrice);
+
+        LocalBroadcastManager.getInstance(context).sendBroadcast(intent);
 
     }
 

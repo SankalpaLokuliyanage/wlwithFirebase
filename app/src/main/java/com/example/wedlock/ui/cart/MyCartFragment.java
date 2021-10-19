@@ -1,15 +1,21 @@
 package com.example.wedlock.ui.cart;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.wedlock.R;
 import com.example.wedlock.adapters.MyCartAdapter;
@@ -28,6 +34,8 @@ public class MyCartFragment extends Fragment {
 
     FirebaseFirestore db;
     FirebaseAuth auth;
+
+    TextView overTotalAmount;
 
     RecyclerView recyclerView;
     MyCartAdapter cartAdapter;
@@ -50,6 +58,12 @@ public class MyCartFragment extends Fragment {
         recyclerView = root.findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        overTotalAmount = root.findViewById(R.id.fulltotalPrice);
+
+        LocalBroadcastManager.getInstance(getActivity())
+                .registerReceiver(mMessageReceiver,new IntentFilter("MyTotalAmount")
+        );
+
         cartModelList = new ArrayList<>();
         cartAdapter = new MyCartAdapter(getActivity(), cartModelList);
         recyclerView.setAdapter(cartAdapter);
@@ -71,4 +85,12 @@ public class MyCartFragment extends Fragment {
 
         return root;
     }
+
+    public BroadcastReceiver mMessageReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            int totalBill = intent.getIntExtra("totalAmount", 0);
+            overTotalAmount.setText("Total Bill " + totalBill);
+        }
+    };
 }
