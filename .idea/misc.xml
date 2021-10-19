@@ -10,6 +10,7 @@
         <entry key="..\:/android/wedlock/app/src/main/res/layout/activity_nav_drawer.xml" value="0.1" />
         <entry key="..\:/android/wedlock/app/src/main/res/layout/activity_signin.xml" value="0.18" />
         <entry key="..\:/android/wedlock/app/src/main/res/layout/activity_signup.xml" value="0.18" />
+        <entry key="..\:/android/wedlock/app/src/main/res/layout/activity_view_all.xml" value="0.17753623188405798" />
         <entry key="..\:/android/wedlock/app/src/main/res/layout/app_bar_layout.xml" value="0.1" />
         <entry key="..\:/android/wedlock/app/src/main/res/layout/app_bar_nav_drawer.xml" value="0.1671195652173913" />
         <entry key="..\:/android/wedlock/app/src/main/res/layout/content_nav_drawer.xml" value="0.1766304347826087" />
@@ -22,8 +23,10 @@
         <entry key="..\:/android/wedlock/app/src/main/res/layout/fragment_slideshow.xml" value="0.1" />
         <entry key="..\:/android/wedlock/app/src/main/res/layout/home_cat_items.xml" value="0.15715579710144928" />
         <entry key="..\:/android/wedlock/app/src/main/res/layout/nav_cat.xml" value="0.18206521739130435" />
+        <entry key="..\:/android/wedlock/app/src/main/res/layout/nav_cat_item.xml" value="0.17753623188405798" />
         <entry key="..\:/android/wedlock/app/src/main/res/layout/popular_item.xml" value="0.25" />
         <entry key="..\:/android/wedlock/app/src/main/res/layout/recommended_items.xml" value="0.18659420289855072" />
+        <entry key="..\:/android/wedlock/app/src/main/res/layout/view_all_item.xml" value="0.17753623188405798" />
         <entry key="..\:/android/wedlock/app/src/main/res/menu/activity_main_drawer.xml" value="0.22" />
         <entry key="..\:/android/wedlock/app/src/main/res/menu/nav_drawer.xml" value="0.20416666666666666" />
       </map>
