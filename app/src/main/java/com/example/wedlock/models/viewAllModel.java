@@ -1,6 +1,8 @@
 package com.example.wedlock.models;
 
-public class viewAllModel {
+import java.io.Serializable;
+
+public class viewAllModel implements Serializable {
 
     String name;
     String description;

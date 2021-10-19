@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.wedlock.R;
+import com.example.wedlock.activities.DetailedActivity;
 import com.example.wedlock.activities.ViewAllActivity;
 import com.example.wedlock.models.viewAllModel;
 
@@ -42,6 +43,15 @@ public class viewAllAdapter extends RecyclerView.Adapter<viewAllAdapter.ViewHold
         holder.description.setText(list.get(position).getDescription());
         holder.price.setText(list.get(position).getPrice());
         holder.number.setText(list.get(position).getNumber());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailedActivity.class);
+                intent.putExtra("detail", list.get(position));
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
