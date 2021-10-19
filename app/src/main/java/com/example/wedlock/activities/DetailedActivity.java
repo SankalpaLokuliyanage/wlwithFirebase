@@ -49,6 +49,6 @@ public class DetailedActivity extends AppCompatActivity {
 
         addToCart = findViewById(R.id.add_to_cart);
 
-      
+
     }
 }
