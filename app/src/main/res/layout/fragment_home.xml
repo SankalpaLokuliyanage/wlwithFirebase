@@ -64,16 +64,6 @@
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/view_all_popular"
-                android:layout_weight="1"
-                android:text="View All"
-                android:textColor="@color/red"
-                android:gravity="end"
-                android:layout_marginRight="7dp"
-                android:textSize="16dp"/>
 
         </LinearLayout>
 
@@ -101,16 +91,6 @@
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/view_all_explore"
-                android:layout_weight="1"
-                android:text="View All"
-                android:textColor="@color/red"
-                android:gravity="end"
-                android:layout_marginRight="7dp"
-                android:textSize="16dp"/>
 
         </LinearLayout>
 
@@ -137,16 +117,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/view_all_recommended"
-                android:layout_weight="1"
-                android:text="View All"
-                android:textColor="@color/red"
-                android:gravity="end"
-                android:layout_marginRight="7dp"
-                android:textSize="16dp"/>
+
 
         </LinearLayout>
 
