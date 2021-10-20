@@ -64,6 +64,8 @@ public class ProfileFragment extends Fragment {
                         UserModel userModel = snapshot.getValue(UserModel.class);
 
                         Glide.with(getContext()).load(userModel.getProfileImg()).into(profileImg);
+                        name.setText(userModel.getName());
+                        address.setText(userModel.getEmail());
                     }
 
                     @Override
